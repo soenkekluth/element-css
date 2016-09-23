@@ -1,0 +1,25 @@
+{
+  "name": "element-css",
+  "version": "1.0.0",
+  "description": "read style and css of a dom element",
+  "main": "src/element-css.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soenkekluth/element-css.git"
+  },
+  "keywords": [
+    "css",
+    "style",
+    "dom",
+    "element"
+  ],
+  "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soenkekluth/element-css/issues"
+  },
+  "homepage": "https://github.com/soenkekluth/element-css#readme"
+}

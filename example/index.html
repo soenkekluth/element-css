@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" id="vp" content="initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1, width=device-width">
+
+  <title></title>
+  <style>
+    .elem {
+      height: 50px;
+      background-color: red;
+
+
+      font-size: 2em;
+    }
+
+    .hans .elem {
+     margin-top: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="../src/element-css.js"></script>
+</head>
+<body>
+
+
+  <div class="page">
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas autem, officia, ipsa quis perspiciatis, mollitia repellendus a maxime id, voluptatibus laboriosam! Fugiat sapiente distinctio, excepturi, iusto vero nemo ex quia.
+
+    <div class="elem" style="margin-top: 10px"></div>
+
+    <div class="hans">
+      <div class="elem"></div>
+      <div class="elem"></div>
+    </div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam amet beatae reiciendis odio enim numquam, perspiciatis, vel nemo repellendus quia architecto. Voluptates consectetur error vero, nobis alias ut harum fuga!
+
+    <div class="output">
+
+    </div>
+  </div>
+
+
+  <script>
+    var els = document.querySelectorAll('.elem');
+    var output = document.querySelector('.output');
+
+    function out(val){
+      output.innerHTML =  output.innerHTML + '<p>'+ val+'</p>';
+    }
+
+    // var log = console.log;
+    var log = out;
+
+    for (var i = 0; i <els.length; i++) {
+      var el = els[i];
+      var css = elementCss.css(el);
+      log(css);
+
+      var windowComputedStyle = window.getComputedStyle(el)['font-size'];
+      log('windowComputedStyle: '+windowComputedStyle);
+
+      var computedStyle = elementCss.computedStyle(el, 'font-size');
+      log('computedStyle: '+computedStyle);
+
+      var matchedStyle = elementCss.matchedStyle(el, 'font-size');
+      log('matchedStyle: '+matchedStyle);
+
+      var style = elementCss.style(el, 'font-size');
+      log('style: '+style);
+
+      var boundingRect = elementCss.boundingRect(el);
+      for(var val in boundingRect){
+        log(val+ ':' +boundingRect[val]);
+      }
+
+      var clientRect = elementCss.clientRect(el);
+      for(var val in clientRect){
+        log(val+ ':' +clientRect[val]);
+      }
+
+
+      var index = elementCss.index(el);
+      log(index);
+
+      log('########################');
+
+    };
+
+
+
+
+  </script>
+</body>
+</html>
